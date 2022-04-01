@@ -45,105 +45,101 @@ For basic usage, you can also have a look at the [plugin homepage](https://levan
 Read here [change the background tooltip and text color](https://github.com/levantoan/WordPress/blob/master/devvn-image-hotspot/change-background-popup-to-white.css)
 
 
-== Changelog ==
+## Changelog ==
 
 For more information, see [Releases](https://levantoan.com/devvn-image-hotspot).
 
-= 1.2.2 - 05/03/2022 =
+### 1.2.2 - 05/03/2022
 
 * add option popup full screen or normal on mobile
 * Fix css close button
 
-= 1.2.1 - 14/12/2020 =
-
+### 1.2.1 - 14/12/202
 * Fix with WordPress 5.6
 
-= 1.2.0 - 03/04/2020 =
+### 1.2.0 - 03/04/2020
+###* Fix: css r
 
-* Fix: css rtl
+### 1.1.9 - 28/03/2020
 
-= 1.1.9 - 28/03/2020 =
+### Fix: Stop video when close toolti
 
-* Fix: Stop video when close tooltips
-
-= 1.1.8 =
+### 1.1.8
 
 * PHP Compatibility: compatible with PHP >= 7.2
 
-= 1.1.7 =
+### 1.1.7
 
 * Fix: compatible with wordpress 5.x.x
 
-= 1.1.6 =
+### 1.1.6
 
 * Fix: text domain from `devvn` to `devvn-image-hotspot`
 
-= 1.1.5 =
+### 1.1.5
 
 * Fix: fixes potential theme css conflict
 
-= 1.1.4 =
+### 1.1.4
 
 * Fix: Edit link in popup
 
-= 1.1.3 =
+### 1.1.3
 
 * Fix: some css style
 
-= 1.1.2 =
+### 1.1.2
 
 * fix: some css style in admin panel
 
-= 1.1.1 =
+### 1.1.1
 
 * Update: some css style
 
-= 1.1.0 =
+### 1.1.0
 
 * Add: target for link pins
 
-= 1.0.9 =
+### 1.0.9
 
-* Fix: conflict with some theme
+### Fix: conflict with some the
 
-= 1.0.8 =
+### 1.0.8
 
-* Update responsive for popup
+### Update responsive for pop
 
 = 1.0.7 =
 
-* Fixed: conflic with avada theme
+### Fixed: conflic with avadaheme
 * Don't load modal Bootstrap if it exists or is loaded
 
 = 1.0.6 =
-
-* Add: ID and Class for pins
+###* Add: ID and Class for pi
 
 = 1.0.5 =
 
-* Add: Select Placement for each Pin
+### Add: Select Placement forach Pin
 * Update PowerTip: PowerTip 1.3.0
 
-= 1.0.4 =
-
+### 1.0.4 
 * Edit: Don't show tooltip when empty content
 
-= 1.0.3 =
+### 1.0.3
 
 * Add Pulse to pins
 * Edit style
 
-= 1.0.2 =
+### 1.0.2
 
 * Edit css
 * Compress css and js in frontend
 * Add donate button in side
 
-= 1.0.1 =
+### 1.0.1
 
 * [ADD] Link to pins
 * [ADD] Custom different icons and different hover icons.
 
-= 1.0 =
+### 1.0
 
 * Update new plugin
