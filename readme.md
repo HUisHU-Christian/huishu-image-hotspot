@@ -1,4 +1,4 @@
-=== Image Hotspot by HUisHU (formely DevVN) ===
+# Image Hotspot by HUisHU (formely DevVN)
 Contributors: levantoan, Sebastian Blasius, Christian Budde
 Tags: hotspot, points, image, maps, image hotspot
 Requires at least: 4.3
@@ -9,7 +9,7 @@ License URI: http://www.gnu.org/licenses/gpl-3.0
 
 Image Hotspot help you add hotspot to your images.
 
-== Description ==
+## Description
 
 Image Hotspot help you add hotspot to your images.
 
@@ -24,7 +24,7 @@ https://www.youtube.com/watch?v=id2Kt6gUKhs
 - jQuery PowerTip [PowerTop Home](https://stevenbenner.github.io/jquery-powertip/)
 
 
-== Installation ==
+## Installation
 
 1. Upload the entire `hu-image-hotspot` folder to the `/wp-content/plugins/` directory.
 1. Activate the plugin through the 'Plugins' menu in WordPress.
