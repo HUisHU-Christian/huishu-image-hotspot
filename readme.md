@@ -62,7 +62,7 @@ For more information, see [Releases](https://levantoan.com/devvn-image-hotspot).
 
 ### 1.1.9 - 28/03/2020
 
-### Fix: Stop video when close toolti
+* Fix: Stop video when close tooltip
 
 ### 1.1.8
 
