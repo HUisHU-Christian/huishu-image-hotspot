@@ -33,19 +33,19 @@ You will find 'Image Hotspot' menu in your WordPress admin panel.
 
 For basic usage, you can also have a look at the [plugin homepage](https://levantoan.com/devvn-image-hotspot).
 
-== Screenshots ==
+## Screenshots
 
 1. screenshot-1.png
 2. screenshot-2.png
 
-== Frequently Asked Questions ==
+## Frequently Asked Questions
 
-= How to change the background tooltip and text color? =
+### How to change the background tooltip and text color?
 
 Read here [change the background tooltip and text color](https://github.com/levantoan/WordPress/blob/master/devvn-image-hotspot/change-background-popup-to-white.css)
 
 
-## Changelog ==
+## Changelog
 
 For more information, see [Releases](https://levantoan.com/devvn-image-hotspot).
 
