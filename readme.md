@@ -102,23 +102,23 @@ For more information, see [Releases](https://levantoan.com/devvn-image-hotspot).
 
 ### 1.0.9
 
-### Fix: conflict with some the
+* Fix: conflict with some the
 
 ### 1.0.8
 
-### Update responsive for pop
+Update responsive for pop
 
-= 1.0.7 =
+### 1.0.7
 
-### Fixed: conflic with avadaheme
+* Fixed: conflic with avadaheme
 * Don't load modal Bootstrap if it exists or is loaded
 
-= 1.0.6 =
-###* Add: ID and Class for pi
+### 1.0.6
+* Add: ID and Class for pi
 
-= 1.0.5 =
+### 1.0.5
 
-### Add: Select Placement forach Pin
+* Add: Select Placement forach Pin
 * Update PowerTip: PowerTip 1.3.0
 
 ### 1.0.4 
