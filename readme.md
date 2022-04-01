@@ -58,7 +58,7 @@ For more information, see [Releases](https://levantoan.com/devvn-image-hotspot).
 * Fix with WordPress 5.6
 
 ### 1.2.0 - 03/04/2020
-###* Fix: css r
+* Fix: css r
 
 ### 1.1.9 - 28/03/2020
 
