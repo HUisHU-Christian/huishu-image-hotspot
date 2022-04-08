@@ -6,7 +6,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/huishu-image-"
 "hotspot\n"
 "POT-Creation-Date: 2022-04-02T08:28:54+02:00\n"
-"PO-Revision-Date: 2022-04-08 13:52+0200\n"
+"PO-Revision-Date: 2022-04-08 13:54+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: de_DE\n"
@@ -62,7 +62,7 @@ msgstr "Elternelement:"
 
 #: admin/inc/cpt-ihotspot.php:13
 msgid "All Items"
-msgstr "Alle Elemente"
+msgstr "Alle Hotspotbilder"
 
 #: admin/inc/cpt-ihotspot.php:14
 msgid "Add New Item"
