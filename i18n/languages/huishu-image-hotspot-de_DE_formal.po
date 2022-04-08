@@ -1,0 +1,289 @@
+# Copyright (C) 2022 HUisHU
+# This file is distributed under the GPLv3.
+msgid ""
+msgstr ""
+"Project-Id-Version: Image Hotspot by DevVN (forked by HUisHU) 1.2.2\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/huishu-image-"
+"hotspot\n"
+"POT-Creation-Date: 2022-04-02T08:28:54+02:00\n"
+"PO-Revision-Date: 2022-04-08 13:52+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: de_DE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.0.1\n"
+"X-Domain: hu-image-hotspot\n"
+
+#. Plugin Name of the plugin
+msgid "Image Hotspot by DevVN (forked by HUisHU)"
+msgstr "Image Hotspot by DevVN (forked by HUisHU)"
+
+#. Plugin URI of the plugin
+msgid "https://levantoan.com/hu-image-hotspot"
+msgstr ""
+
+#. Description of the plugin
+msgid "Image Hotspot help you add hotspot to your images."
+msgstr ""
+
+#. Author of the plugin
+msgid "HUisHU"
+msgstr "HUisHU"
+
+#. Author URI of the plugin
+msgid "https://levantoan.com/"
+msgstr ""
+
+#: admin/inc/cpt-ihotspot.php:7
+msgctxt "Post Type General Name"
+msgid "Image Hotspot"
+msgstr ""
+
+#: admin/inc/cpt-ihotspot.php:8
+msgctxt "Post Type Singular Name"
+msgid "Image Hotspot"
+msgstr ""
+
+#: admin/inc/cpt-ihotspot.php:9 admin/inc/cpt-ihotspot.php:10
+#: admin/inc/cpt-ihotspot.php:34 huishu-image-hotspot.php:74
+msgid "Image Hotspot"
+msgstr "Hotspotbild"
+
+#: admin/inc/cpt-ihotspot.php:11
+msgid "Item Archives"
+msgstr "Hotspotbildarchiv"
+
+#: admin/inc/cpt-ihotspot.php:12
+msgid "Parent Item:"
+msgstr "Elternelement:"
+
+#: admin/inc/cpt-ihotspot.php:13
+msgid "All Items"
+msgstr "Alle Elemente"
+
+#: admin/inc/cpt-ihotspot.php:14
+msgid "Add New Item"
+msgstr "Neues Element hinzufügen"
+
+#: admin/inc/cpt-ihotspot.php:15
+msgid "Add New"
+msgstr "Neu hinzufügen"
+
+#: admin/inc/cpt-ihotspot.php:16
+msgid "New Item"
+msgstr "Neues Element"
+
+#: admin/inc/cpt-ihotspot.php:17
+msgid "Edit Item"
+msgstr "Element bearbeiten"
+
+#: admin/inc/cpt-ihotspot.php:18
+msgid "Update Item"
+msgstr "Element aktualisieren"
+
+#: admin/inc/cpt-ihotspot.php:19
+msgid "View Item"
+msgstr "Element anzeigen"
+
+#: admin/inc/cpt-ihotspot.php:20
+msgid "Search Item"
+msgstr "Element suchen"
+
+#: admin/inc/cpt-ihotspot.php:21
+msgid "Not found"
+msgstr "Nicht gefunden"
+
+#: admin/inc/cpt-ihotspot.php:22
+msgid "Not found in Trash"
+msgstr "Nicht gefunden im Papierkorb"
+
+#: admin/inc/cpt-ihotspot.php:23
+msgid "Featured Image"
+msgstr "Hervorgehobenes Bild"
+
+#: admin/inc/cpt-ihotspot.php:24
+msgid "Set featured image"
+msgstr "Hervorgehobenes Bild wählen"
+
+#: admin/inc/cpt-ihotspot.php:25
+msgid "Remove featured image"
+msgstr "Hervorgehobenes Bild entfernen"
+
+#: admin/inc/cpt-ihotspot.php:26
+msgid "Use as featured image"
+msgstr "Benutze hervorgehobenes Bild"
+
+#: admin/inc/cpt-ihotspot.php:27
+msgid "Insert into item"
+msgstr "In Element einfügen"
+
+#: admin/inc/cpt-ihotspot.php:28
+msgid "Uploaded to this item"
+msgstr "Zu Element hochladen"
+
+#: admin/inc/cpt-ihotspot.php:29
+msgid "Items list"
+msgstr "Liste an Elementen"
+
+#: admin/inc/cpt-ihotspot.php:30
+msgid "Items list navigation"
+msgstr "Elementlistennavigation"
+
+#: admin/inc/cpt-ihotspot.php:31
+msgid "Filter items list"
+msgstr "In Liste filtern"
+
+#: admin/inc/cpt-ihotspot.php:83
+msgid "Title"
+msgstr "Titel"
+
+#: admin/inc/cpt-ihotspot.php:84
+msgid "Shortcode"
+msgstr "Shortcode"
+
+#: admin/inc/cpt-ihotspot.php:85
+msgid "Date"
+msgstr "Datum"
+
+#: admin/inc/settings.php:13 admin/inc/settings.php:25
+msgid "Image Hotspot settings"
+msgstr "Hotspotbild Shortcode"
+
+#: admin/inc/settings.php:14
+msgid "Settings"
+msgstr "Einstellungen"
+
+#: admin/inc/settings.php:31
+msgid "Popup type on mobile"
+msgstr ""
+
+#: huishu-image-hotspot.php:82
+msgid "Image Hotspot Shortcode"
+msgstr "Hotspotbild Shortcode"
+
+#: huishu-image-hotspot.php:124
+msgid "Pins Image"
+msgstr "Pinbild"
+
+#: huishu-image-hotspot.php:132 huishu-image-hotspot.php:464
+msgid "Select pins"
+msgstr "Pins auswählen"
+
+#: huishu-image-hotspot.php:137
+msgid "Pins Hover Image"
+msgstr "Pinbild (hover)"
+
+#: huishu-image-hotspot.php:145 huishu-image-hotspot.php:475
+msgid "Select pins hover"
+msgstr "Wähle einen Hover-Pin aus"
+
+#: huishu-image-hotspot.php:150
+msgid "Pins Center Position"
+msgstr "Mittlere Pin-Position"
+
+#: huishu-image-hotspot.php:154
+msgid "Center center"
+msgstr "Mitte"
+
+#: huishu-image-hotspot.php:155
+msgid "Top Left"
+msgstr "Oben Links"
+
+#: huishu-image-hotspot.php:156
+msgid "Top Center"
+msgstr "Oben Mitte"
+
+#: huishu-image-hotspot.php:157
+msgid "Top Right"
+msgstr "Oben Rechts"
+
+#: huishu-image-hotspot.php:158
+msgid "Right Center"
+msgstr "Rechts Mitte"
+
+#: huishu-image-hotspot.php:159
+msgid "Bottom Right"
+msgstr "Unten Rechts"
+
+#: huishu-image-hotspot.php:160
+msgid "Bottom Center"
+msgstr "Unten Mitte"
+
+#: huishu-image-hotspot.php:161
+msgid "Bottom Left"
+msgstr "Unten Links"
+
+#: huishu-image-hotspot.php:162
+msgid "Left Center"
+msgstr "Links Mitte"
+
+#: huishu-image-hotspot.php:163
+msgid "Custom"
+msgstr "Angepasst"
+
+#: huishu-image-hotspot.php:164
+msgid "Top: -"
+msgstr "Oben: -"
+
+#: huishu-image-hotspot.php:165
+msgid "Left: -"
+msgstr "Links: -"
+
+#: huishu-image-hotspot.php:173
+msgid "Pins Animation"
+msgstr "Pin-Animation"
+
+#: huishu-image-hotspot.php:177
+msgid "None"
+msgstr "Nichts"
+
+#: huishu-image-hotspot.php:178
+msgid "Pulse"
+msgstr "Puls"
+
+#: huishu-image-hotspot.php:187
+msgid "Upload Image"
+msgstr "Bild hochladen"
+
+#: huishu-image-hotspot.php:189
+msgid "Add Point"
+msgstr "Punkt hinzufügen"
+
+#: huishu-image-hotspot.php:246
+msgid "Copy shortcode to view"
+msgstr "Shortcode als Ansicht kopieren"
+
+#: huishu-image-hotspot.php:249
+msgid "Publish to view shortcode"
+msgstr "Veröffentlichen um Shortcode zu sehen"
+
+#: huishu-image-hotspot.php:370
+msgid "Select image"
+msgstr "Bild auswählen"
+
+#: huishu-image-hotspot.php:371
+msgid "Select"
+msgstr "Auswahl"
+
+#: huishu-image-hotspot.php:428
+msgid "Content"
+msgstr "Inhalt"
+
+#: huishu-image-hotspot.php:457
+msgid "Pin Image Custom"
+msgstr "Benutzerdefiniertes Pin-Bild"
+
+#: huishu-image-hotspot.php:468
+msgid "Pins hover image custom"
+msgstr "Benutzerdefiniertes Pin-Bild (hover)"
+
+#: huishu-image-hotspot.php:519
+msgid "Delete"
+msgstr "Löschen"
+
+#: huishu-image-hotspot.php:520
+msgid "Done"
+msgstr "Fertig"
