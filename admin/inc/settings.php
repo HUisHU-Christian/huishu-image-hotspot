@@ -10,10 +10,10 @@ add_action( 'admin_menu', 'hu_ihp_admin_menu' );
 function hu_ihp_admin_menu() {
     add_submenu_page(
         'edit.php?post_type=points_image',
-        __( 'Image Hotspot settings', 'hu-image-hotspot' ),
-        __( 'Settings', 'hu-image-hotspot' ),
+        __( 'Image Hotspot settings', 'huishu-image-hotspot' ),
+        __( 'Settings', 'huishu-image-hotspot' ),
         'manage_options',
-        'hu-image-hotspot',
+        'huishu-image-hotspot',
         'hu_ihp_callback'
     );
 }
@@ -22,13 +22,13 @@ function hu_ihp_callback(){
     $popup_type = hu_get_ihp_options('popup_type');
     ?>
     <div class="wrap">
-        <h1><?php _e('Image Hotspot settings', 'hu-image-hotspot');?></h1>
+        <h1><?php _e('Image Hotspot settings', 'huishu-image-hotspot');?></h1>
         <form method="post" action="options.php" novalidate="novalidate">
             <?php settings_fields( 'ihp-options-group' );?>
             <table class="form-table">
                 <tbody>
                 <tr>
-                    <th scope="row"><label><?php _e('Popup type on mobile', 'hu-image-hotspot')?></label></th>
+                    <th scope="row"><label><?php _e('Popup type on mobile', 'huishu-image-hotspot')?></label></th>
                     <td>
                         <div class="tet_style_radio tet_style_radio_banner">
                             <label style="margin-right: 10px;">

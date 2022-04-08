@@ -7,7 +7,7 @@ Original-Author: Le Van Toan
 Author: HUisHU
 Version: 1.2.2
 Author URI: https://levantoan.com/
-Text Domain: hu-image-hotspot
+Text Domain: huishu-image-hotspot
 Domain Path: /languages
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0
@@ -57,11 +57,7 @@ define('HU_IHOTSPOT_PINS_DEFAULT', serialize(array(
 //include
 include 'admin/inc/cpt-ihotspot.php';
 include 'admin/inc/add_shortcode_hu_ihotspot.php';
-include 'admin/inc/metabox-donate.php';
 include 'admin/inc/settings.php';
-
-load_textdomain('hu-image-hotspot', dirname(__FILE__) . '/languages/hu-image-hotspot-' . get_locale() . '.mo');
-load_plugin_textdomain( 'hu-image-hotspot', false, plugin_basename( dirname( __FILE__ ) ) . '/i18n/languages' );
 
 //metabox
 function hu_ihotspot_meta_box() {
@@ -71,7 +67,7 @@ function hu_ihotspot_meta_box() {
 	foreach ( $screens as $screen ) {
 		add_meta_box(
 			'hu-ihotspot-metabox',
-			__( 'Image Hotspot', 'hu-image-hotspot' ),
+			__( 'Image Hotspot', 'huishu-image-hotspot' ),
 			'hu_ihotspot_meta_box_callback',
 			$screen,
 			'normal',
@@ -79,7 +75,7 @@ function hu_ihotspot_meta_box() {
 		);
 		add_meta_box(
 			'hu-ihotspot-shortcode',
-			__( 'Image Hotspot Shortcode', 'hu-image-hotspot' ),
+			__( 'Image Hotspot Shortcode', 'huishu-image-hotspot' ),
 			'hu_ihotspot_shortcode_callback',
 			$screen,
 			'side',
@@ -121,7 +117,7 @@ function hu_ihotspot_meta_box_callback( $post ) {
 	<table class="svl-table">
 		<tbody>
 			<tr>
-				<td class="svl-label"><?php _e('Pins Image', 'hu-image-hotspot')?></td>
+				<td class="svl-label"><?php _e('Pins Image', 'huishu-image-hotspot')?></td>
 				<td class="svl-input">
 					<div class="svl-upload-image <?=($pins_image)?'has-image':''?>">						
 						<div class="view-has-value">
@@ -129,12 +125,12 @@ function hu_ihotspot_meta_box_callback( $post ) {
 							<img src="<?=$pins_image?>" class="image_view pins_img"/>									
 							<a href="#" class="svl-delete-image">x</a>
 						</div>
-						<div class="hidden-has-value"><input type="button" class="button-upload button" value="<?php _e( 'Select pins', 'hu-image-hotspot' )?>" /></div>
+						<div class="hidden-has-value"><input type="button" class="button-upload button" value="<?php _e( 'Select pins', 'huishu-image-hotspot' )?>" /></div>
 					</div>
 				</td>
 			</tr>
 			<tr>
-				<td class="svl-label"><?php _e('Pins Hover Image', 'hu-image-hotspot')?></td>
+				<td class="svl-label"><?php _e('Pins Hover Image', 'huishu-image-hotspot')?></td>
 				<td class="svl-input">
 					<div class="svl-upload-image <?=($pins_image_hover)?'has-image':''?>">						
 						<div class="view-has-value">
@@ -142,37 +138,27 @@ function hu_ihotspot_meta_box_callback( $post ) {
 							<img src="<?=$pins_image_hover?>" class="image_view pins_img_hover"/>									
 							<a href="#" class="svl-delete-image">x</a>
 						</div>
-						<div class="hidden-has-value"><input type="button" class="button-upload button" value="<?php _e( 'Select pins hover', 'hu-image-hotspot' )?>" /></div>
+						<div class="hidden-has-value"><input type="button" class="button-upload button" value="<?php _e( 'Select pins hover', 'huishu-image-hotspot' )?>" /></div>
 					</div>
 				</td>				
 			</tr>
 			<tr>
-				<td class="svl-label"><?php _e('Custom Pin', 'hu-image-hotspot')?></td>
-				<td class="svl-input">
-					<div class="svl-upload-image">
-						<div class="view-has-value">
-							<input type="checkbox" name="pins_custom" class="pins_custom" value="false" />
-						</div>
-					</div>
-				</td>
-			</tr>
-			<tr>
-				<td class="svl-label"><?php _e('Pins Center Position', 'hu-image-hotspot')?></td>
+				<td class="svl-label"><?php _e('Pins Center Position', 'huishu-image-hotspot')?></td>
 				<td class="svl-input">
 					<div class="pins-position-wrap">
 						<p>
-							<label><input type="radio" name="choose_type" value="center_center" <?=($pins_more_option['position'] == 'center_center'?'checked="checked"':'')?>><?php _e('Center center', 'hu-image-hotspot')?></label>
-							<label><input type="radio" name="choose_type" value="top_left" <?=($pins_more_option['position'] == 'top_left'?'checked="checked"':'')?>><?php _e('Top Left', 'hu-image-hotspot')?></label>
-							<label><input type="radio" name="choose_type" value="top_center" <?=($pins_more_option['position'] == 'top_center'?'checked="checked"':'')?>><?php _e('Top Center', 'hu-image-hotspot')?></label>
-							<label><input type="radio" name="choose_type" value="top_right" <?=($pins_more_option['position'] == 'top_right'?'checked="checked"':'')?>><?php _e('Top Right', 'hu-image-hotspot')?></label>
-							<label><input type="radio" name="choose_type" value="right_center" <?=($pins_more_option['position'] == 'right_center'?'checked="checked"':'')?>><?php _e('Right Center', 'hu-image-hotspot')?></label>
-							<label><input type="radio" name="choose_type" value="bottom_right" <?=($pins_more_option['position'] == 'bottom_right'?'checked="checked"':'')?>><?php _e('Bottom Right', 'hu-image-hotspot')?></label>
-							<label><input type="radio" name="choose_type" value="bottom_center" <?=($pins_more_option['position'] == 'bottom_center'?'checked="checked"':'')?>><?php _e('Bottom Center', 'hu-image-hotspot')?></label>
-							<label><input type="radio" name="choose_type" value="bottom_left" <?=($pins_more_option['position'] == 'bottom_left'?'checked="checked"':'')?>><?php _e('Bottom Left', 'hu-image-hotspot')?></label>
-							<label><input type="radio" name="choose_type" value="left_center" <?=($pins_more_option['position'] == 'left_center'?'checked="checked"':'')?>><?php _e('Left Center', 'hu-image-hotspot')?></label>
-							<label><input type="radio" name="choose_type" value="custom_center" <?=($pins_more_option['position'] == 'custom_center'?'checked="checked"':'')?>><?php _e('Custom', 'hu-image-hotspot')?></label>
-							<label><?php _e('Top: -', 'hu-image-hotspot')?> <input type="number" name="custom_top" value="<?=$pins_more_option['custom_top']?>" min="0" step="any"> px</label>
-							<label><?php _e('Left: -', 'hu-image-hotspot')?> <input type="number" name="custom_left" value="<?=$pins_more_option['custom_left']?>" min="0" step="any"> px</label>
+							<label><input type="radio" name="choose_type" value="center_center" <?=($pins_more_option['position'] == 'center_center'?'checked="checked"':'')?>><?php _e('Center center', 'huishu-image-hotspot')?></label>
+							<label><input type="radio" name="choose_type" value="top_left" <?=($pins_more_option['position'] == 'top_left'?'checked="checked"':'')?>><?php _e('Top Left', 'huishu-image-hotspot')?></label>
+							<label><input type="radio" name="choose_type" value="top_center" <?=($pins_more_option['position'] == 'top_center'?'checked="checked"':'')?>><?php _e('Top Center', 'huishu-image-hotspot')?></label>
+							<label><input type="radio" name="choose_type" value="top_right" <?=($pins_more_option['position'] == 'top_right'?'checked="checked"':'')?>><?php _e('Top Right', 'huishu-image-hotspot')?></label>
+							<label><input type="radio" name="choose_type" value="right_center" <?=($pins_more_option['position'] == 'right_center'?'checked="checked"':'')?>><?php _e('Right Center', 'huishu-image-hotspot')?></label>
+							<label><input type="radio" name="choose_type" value="bottom_right" <?=($pins_more_option['position'] == 'bottom_right'?'checked="checked"':'')?>><?php _e('Bottom Right', 'huishu-image-hotspot')?></label>
+							<label><input type="radio" name="choose_type" value="bottom_center" <?=($pins_more_option['position'] == 'bottom_center'?'checked="checked"':'')?>><?php _e('Bottom Center', 'huishu-image-hotspot')?></label>
+							<label><input type="radio" name="choose_type" value="bottom_left" <?=($pins_more_option['position'] == 'bottom_left'?'checked="checked"':'')?>><?php _e('Bottom Left', 'huishu-image-hotspot')?></label>
+							<label><input type="radio" name="choose_type" value="left_center" <?=($pins_more_option['position'] == 'left_center'?'checked="checked"':'')?>><?php _e('Left Center', 'huishu-image-hotspot')?></label>
+							<label><input type="radio" name="choose_type" value="custom_center" <?=($pins_more_option['position'] == 'custom_center'?'checked="checked"':'')?>><?php _e('Custom', 'huishu-image-hotspot')?></label>
+							<label><?php _e('Top: -', 'huishu-image-hotspot')?> <input type="number" name="custom_top" value="<?=$pins_more_option['custom_top']?>" min="0" step="any"> px</label>
+							<label><?php _e('Left: -', 'huishu-image-hotspot')?> <input type="number" name="custom_left" value="<?=$pins_more_option['custom_left']?>" min="0" step="any"> px</label>
 							<input type="hidden" name="custom_hover_top" value="<?=$pins_more_option['custom_hover_top']?>" min="0" step="any">
 							<input type="hidden" name="custom_hover_left" value="<?=$pins_more_option['custom_hover_left']?>" min="0" step="any">
 						</p>
@@ -180,12 +166,12 @@ function hu_ihotspot_meta_box_callback( $post ) {
 				</td>				
 			</tr>
 			<tr>
-				<td class="svl-label"><?php _e('Pins Animation', 'hu-image-hotspot')?></td>
+				<td class="svl-label"><?php _e('Pins Animation', 'huishu-image-hotspot')?></td>
 				<td class="svl-input">
 					<div class="pins-position-wrap">
 						<p>
-							<label><input type="radio" name="pins_animation" value="none" <?=($pins_more_option['pins_animation'] == 'none'?'checked="checked"':'')?>><?php _e('None', 'hu-image-hotspot')?></label>
-							<label><input type="radio" name="pins_animation" value="pulse" <?=($pins_more_option['pins_animation'] == 'pulse'?'checked="checked"':'')?>><?php _e('Pulse', 'hu-image-hotspot')?></label>
+							<label><input type="radio" name="pins_animation" value="none" <?=($pins_more_option['pins_animation'] == 'none'?'checked="checked"':'')?>><?php _e('None', 'huishu-image-hotspot')?></label>
+							<label><input type="radio" name="pins_animation" value="pulse" <?=($pins_more_option['pins_animation'] == 'pulse'?'checked="checked"':'')?>><?php _e('Pulse', 'huishu-image-hotspot')?></label>
 						</p>
 					</div>
 				</td>				
@@ -194,9 +180,9 @@ function hu_ihotspot_meta_box_callback( $post ) {
 	</table>
 	<div class="svl-image-wrap <?=($maps_images)?'has-image':''?>">	
 	<div class="svl-control">
-		<input type="button" id="meta-image-button" class="button" value="<?php _e( 'Upload Image', 'hu-image-hotspot' )?>" />
+		<input type="button" id="meta-image-button" class="button" value="<?php _e( 'Upload Image', 'huishu-image-hotspot' )?>" />
 		<input type="hidden" name="maps_images" class="maps_images" id="maps_images" value="<?php echo $maps_images; ?>" />
-		<input type="button" name="add_point" class="add_point button view-has-value" value="<?php _e('Add Point', 'hu-image-hotspot');?>"/>
+		<input type="button" name="add_point" class="add_point button view-has-value" value="<?php _e('Add Point', 'huishu-image-hotspot');?>"/>
 		<span class="spinner"></span>
 	</div>
 	<div class="wrap_svl view-has-value" id="body_drag">
@@ -209,17 +195,17 @@ function hu_ihotspot_meta_box_callback( $post ) {
 			<?php $stt = 1;foreach ($data_points as $point):?>		 
 			<?php 
 			$data_input = array(
-				'countPoint'	=>	$stt,
-				'imgPoint'		=>	$pins_image,
-				'top'			=>	$point['top'],
-				'left'			=>	$point['left'],
-				'linkpins'		=>	isset($point['linkpins'])?esc_url($point['linkpins']):'',
-				'link_target'		=>	isset($point['link_target'])?esc_attr($point['link_target']):'_self',
-				'pins_image_custom'		=>	isset($point['pins_image_custom'])?$point['pins_image_custom']:'',
+				'countPoint'							=>	$stt,
+				'imgPoint'								=>	$pins_image,
+				'top'											=>	$point['top'],
+				'left'										=>	$point['left'],
+				'linkpins'								=>	isset($point['linkpins'])?esc_url($point['linkpins']):'',
+				'link_target'							=>	isset($point['link_target'])?esc_attr($point['link_target']):'_self',
+				'pins_image_custom'				=>	isset($point['pins_image_custom'])?$point['pins_image_custom']:'',
 				'pins_image_hover_custom'	=>	isset($point['pins_image_hover_custom'])?$point['pins_image_hover_custom']:'',
-				'placement'	=>	isset($point['placement'])?$point['placement']:'',
-				'pins_id'	=>	isset($point['pins_id'])?$point['pins_id']:'',
-				'pins_class'	=>	isset($point['pins_class'])?$point['pins_class']:''
+				'placement'								=>	isset($point['placement'])?$point['placement']:'',
+				'pins_id'									=>	isset($point['pins_id'])?$point['pins_id']:'',
+				'pins_class'							=>	isset($point['pins_class'])?$point['pins_class']:''
 			);
 			echo hu_ihotspot_get_pins_default($data_input);?>
 			<?php $stt++;endforeach;?>
@@ -253,10 +239,10 @@ function hu_ihotspot_meta_box_callback( $post ) {
 function hu_ihotspot_shortcode_callback( $post ){
 	if (get_post_status($post->ID) == "publish"):
 	?>
-		<span><?php _e('Copy shortcode to view', 'hu-image-hotspot')?></span>
+		<span><?php _e('Copy shortcode to view', 'huishu-image-hotspot')?></span>
 		<input readonly="readonly" class="shortcodemap" value='[hu_ihotspot id="<?=$post->ID?>"]'/>
 	<?php else:?>
-		<span><?php _e('Publish to view shortcode', 'hu-image-hotspot')?></span>
+		<span><?php _e('Publish to view shortcode', 'huishu-image-hotspot')?></span>
 	<?php 
 	endif;	
 }
@@ -377,8 +363,8 @@ function hu_ihotspot_admin_script() {
 		wp_register_script( 'maps_points', plugin_dir_url( __FILE__ ) . 'admin/js/maps_points.js', array( 'jquery' ), HU_IHOTSPOT_VER, true );
 		wp_localize_script( 'maps_points', 'meta_image',
 			array(
-				'title' 		=> __( 'Select image', 'hu-image-hotspot' ),
-				'button' 		=> __( 'Select', 'hu-image-hotspot' ),
+				'title' 		=> __( 'Select image', 'huishu-image-hotspot' ),
+				'button' 		=> __( 'Select', 'huishu-image-hotspot' ),
 				'site_url'		=>	home_url(),
 				'ajaxurl'		=>	admin_url('admin-ajax.php'),
 				'editor_style'	=>	hu_ihotspot_editor_styles()
@@ -418,71 +404,71 @@ function hu_ihotspot_get_input_point_default($data = array()){
 	if (!is_array($data)) $data = array();
 	$data = wp_parse_args($data, unserialize(HU_IHOTSPOT_POINT_DEFAULT));
 		
-	$countPoint 				= isset($data['countPoint'])?$data['countPoint']:'';
-	$pointContent 				= isset($data['content'])?$data['content']:'';
-	$pointLeft 					= isset($data['left'])?$data['left']:'';
-	$pointTop 					= isset($data['top'])?$data['top']:'';
-	$pointLink 					= isset($data['linkpins'])?$data['linkpins']:'';
-	$link_target 					= isset($data['link_target'])?$data['link_target']:'_self';
-	$pins_image_custom 			= isset($data['pins_image_custom'])?$data['pins_image_custom']:'';
+	$countPoint								= isset($data['countPoint'])?$data['countPoint']:'';
+	$pointContent 						= isset($data['content'])?$data['content']:'';
+	$pointLeft								= isset($data['left'])?$data['left']:'';
+	$pointTop									= isset($data['top'])?$data['top']:'';
+	$pointLink								= isset($data['linkpins'])?$data['linkpins']:'';
+	$link_target 							= isset($data['link_target'])?$data['link_target']:'_self';
+	$pins_image_custom 				= isset($data['pins_image_custom'])?$data['pins_image_custom']:'';
 	$pins_image_hover_custom	= isset($data['pins_image_hover_custom'])?$data['pins_image_hover_custom']:'';
-	$placement	= isset($data['placement'])?$data['placement']:'';
-	$pins_id	= isset($data['pins_id'])?$data['pins_id']:'';
-	$pins_class	= isset($data['pins_class'])?$data['pins_class']:'';
+	$placement								= isset($data['placement'])?$data['placement']:'';
+	$pins_id									= isset($data['pins_id'])?$data['pins_id']:'';
+	$pins_class								= isset($data['pins_class'])?$data['pins_class']:'';
 	ob_start();
 	?>	
 	<div class="hu-hotspot-popup list_points" tabindex="-1" role="dialog" id="info_draggable<?php echo $countPoint?>" data-popup="info_draggable<?php echo $countPoint?>" data-points="<?php echo $countPoint?>">
 		<div class="hu-hotspot-popup-inner">
 			<div class="hu-hotspot-popup-modal-content">
 				<div class="hu-hotspot-popup-modal-header">
-					<h3 class="modal-title"><?php _e('Content','hu-image-hotspot')?></h3>
+					<h3 class="modal-title"><?php _e('Content','huishu-image-hotspot')?></h3>
 					</div>
 					<div class="hu-hotspot-popup-modal-body">
 					<?php
-										add_filter( 'wp_default_editor', 'hu_wp_default_editor' );
-					$settings = array(
-						'textarea_name'	=>	'pointdata[content][]',		
-						'tabindex' => 4,
-									'tinymce' => array(
-										'min_height'	=>	200,
+						add_filter( 'wp_default_editor', 'hu_wp_default_editor' );
+						$settings = array(
+							'textarea_name'	=>	'pointdata[content][]',		
+							'tabindex' => 4,
+							'tinymce' => array(
+								'min_height'	=>	200,
 								'toolbar1'		=>	'bold,italic,underline,bullist,numlist,link,unlink,forecolor,undo,redo,wp_more',
 							),		
-					);
-					wp_editor($pointContent, 'point_content'.$countPoint, $settings);
+						);
+						wp_editor($pointContent, 'point_content'.$countPoint, $settings);
 					?>
 					<div class="hu_row">
 						<div class="hu_col_3">
 							<label>Link to pins<br>
-							<input type="text" name="pointdata[linkpins][]" value="<?php echo $pointLink?>" placeholder="Link to pins"/>
+								<input type="text" name="pointdata[linkpins][]" value="<?php echo $pointLink?>" placeholder="Link to pins"/>
 							</label><br>
 							<label>Link target<br>
-							<select name="pointdata[link_target][]">
+								<select name="pointdata[link_target][]">
 									<option value="_self" <?php selected('_self',$link_target);?>>Open curent window</option>
 									<option value="_blank" <?php selected('_blank',$link_target);?>>Open new window</option>
-							</select>
-							</label>
+								</select>
+								</label>
 
 						</div>	
 						<div class="hu_col_3">
-							<label><?php _e('Pin Image Custom','hu-image-hotspot');?></label>
+							<label><?php _e('Pin Image Custom','huishu-image-hotspot');?></label>
 							<div class="svl-upload-image <?=($pins_image_custom)?'has-image':''?>">						
 								<div class="view-has-value">
 									<input type="hidden" name="pointdata[pins_image_custom][]" class="pins_image" value="<?php echo $pins_image_custom; ?>" />								
 									<img src="<?=$pins_image_custom?>" class="image_view pins_img"/>									
 									<a href="#" class="svl-delete-image">x</a>
 								</div>
-								<div class="hidden-has-value"><input type="button" class="button-upload button" value="<?php _e( 'Select pins', 'hu-image-hotspot' )?>" /></div>
+								<div class="hidden-has-value"><input type="button" class="button-upload button" value="<?php _e( 'Select pins', 'huishu-image-hotspot' )?>" /></div>
 							</div>
 						</div>
 						<div class="hu_col_3">
-							<label><?php _e( 'Pins hover image custom', 'hu-image-hotspot' )?></label>
+							<label><?php _e( 'Pins hover image custom', 'huishu-image-hotspot' )?></label>
 							<div class="svl-upload-image <?=($pins_image_hover_custom)?'has-image':''?>">						
 								<div class="view-has-value">
 									<input type="hidden" name="pointdata[pins_image_hover_custom][]" class="pins_image_hover" value="<?php echo $pins_image_hover_custom; ?>" />								
 									<img src="<?=$pins_image_hover_custom?>" class="image_view pins_img_hover"/>									
 									<a href="#" class="svl-delete-image">x</a>
 								</div>
-								<div class="hidden-has-value"><input type="button" class="button-upload button" value="<?php _e( 'Select pins hover', 'hu-image-hotspot' )?>" /></div>
+								<div class="hidden-has-value"><input type="button" class="button-upload button" value="<?php _e( 'Select pins hover', 'huishu-image-hotspot' )?>" /></div>
 							</div>
 						</div>					
 					</div>
@@ -509,14 +495,14 @@ function hu_ihotspot_get_input_point_default($data = array()){
 						</div>
 						<div class="hu_col_3">
 							<label>Pins ID<br>
-							<input type="text" name="pointdata[pins_id][]" value="<?php echo $pins_id?>" placeholder="Type a ID"/>
+								<input type="text" name="pointdata[pins_id][]" value="<?php echo $pins_id?>" placeholder="Type a ID"/>
 							</label>
-												</div>
-												<div class="hu_col_3">
+						</div>
+						<div class="hu_col_3">
 							<label>Pins Class<br>
-							<input type="text" name="pointdata[pins_class][]" value="<?php echo $pins_class?>" placeholder="Ex: class_1 class_2 class_3"/>
+								<input type="text" name="pointdata[pins_class][]" value="<?php echo $pins_class?>" placeholder="Ex: class_1 class_2 class_3"/>
 							</label>
-												</div>
+						</div>
 					</div>
 					<p>
 						<input type="hidden" name="pointdata[top][]" min="0" max="100" step="any" value="<?php echo $pointTop?>" />
@@ -526,8 +512,8 @@ function hu_ihotspot_get_input_point_default($data = array()){
 					</p>
 					</div>
 					<div class="hu-hotspot-popup-modal-footer">
-					<button type="button" class="button button-danger button-large button_delete"><?php _e('Delete','hu-image-hotspot')?></button>
-					<button type="button" class="button button-primary button-large" data-popup-close="info_draggable<?php echo $countPoint?>"><?php _e('Done','hu-image-hotspot')?></button>
+						<button type="button" class="button button-danger button-large button_delete"><?php _e('Delete','huishu-image-hotspot')?></button>
+						<button type="button" class="button button-primary button-large" data-popup-close="info_draggable<?php echo $countPoint?>"><?php _e('Done','huishu-image-hotspot')?></button>
 					</div>
 			</div><!-- /.modal-content -->
 		</div><!-- /.modal-dialog -->
@@ -550,7 +536,13 @@ function hu_ihotspot_get_pins_default($datapin = array()){
 	<div id="draggable<?php echo $countPoint?>" data-points="<?php echo $countPoint?>" class="drag_element" <?php if ($topPin && $leftPin):?> style="top:<?php echo $topPin?>%; left:<?php echo $leftPin?>%;"<?php endif;?>>
 		<div class="point_style">		
 			<a href="#" class="pins_click_to_edit" data-popup-open="info_draggable<?php echo $countPoint?>" data-target="#info_draggable<?php echo $countPoint?>">
-				<img src="<?php echo $imgPin?>">
+			  <?php
+					if ($imgPin) {
+						echo '<img src="'.$imgPin.'">';
+					} else {
+						echo '<div class="custom-pin"><div class="inner-pin"></div></div>';
+					}
+				?>
 			</a>
 		</div>
 	</div>
@@ -606,3 +598,9 @@ function hu_ihotspot_convert_array_data($inputArray = array()){
 	return $aOutput;
 }
 
+function hu_ihotspot_init() {
+	$plugin_rel_path = basename( dirname( __FILE__ ) ) . '/i18n/languages'; /* Relative to WP_PLUGIN_DIR */
+	load_textdomain('huishu-image-hotspot', $plugin_rel_path . '/huishu-image-hotspot-' . get_locale() . '.mo');
+	load_plugin_textdomain( 'huishu-image-hotspot', false, $plugin_rel_path );
+}
+add_action('plugins_loaded', 'hu_ihotspot_init');

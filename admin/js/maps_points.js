@@ -22,10 +22,15 @@ jQuery(document).ready(function($){
 			// Sends the attachment URL to our custom image input field.
 			$('.svl-image-wrap').addClass('has-image');
 			$('#maps_images').val(media_attachment.url);
-			if($('#body_drag .images_wrap img').length > 0){
-				$('#body_drag .images_wrap img').attr('src',media_attachment.url);
-			}else{
-				$('#body_drag .images_wrap').html('<img src="'+media_attachment.url+'">');
+
+			if (media_attachment.url) {
+				if ($('#body_drag .images_wrap img').length > 0){
+					$('#body_drag .images_wrap img').attr('src', media_attachment.url);
+				} else {
+					$('#body_drag .images_wrap').html('<img src="' + media_attachment.url + '">');
+				}
+			} else {
+				$('#body_drag .images_wrap').html('<div class="custom-pin"></div>');
 			}
 		});
 		// Opens the media library frame.
@@ -108,10 +113,10 @@ jQuery(document).ready(function($){
 			dataType : "json",
 			url : meta_image.ajaxurl,
 			data : {
-				action		:	"hu_ihotspot_clone_point", 
-				countpoint 	: 	countPoint, 
-				img_pins	: 	pins_image_view,
-				nonce		: 	nonceForm
+				action			:	"hu_ihotspot_clone_point", 
+				countpoint	:	countPoint, 
+				img_pins		:	pins_image_view,
+				nonce				:	nonceForm
 			},
 			context: this,
 			beforeSend: function(){
@@ -161,9 +166,9 @@ jQuery(document).ready(function($){
 					tinyMCE.execCommand('mceRemoveEditor', false, fullId);
 					tinyMCE.execCommand('mceAddEditor', false, fullId); 					
 					
-						doDraggable();
-						calc_custom_position();	
-						$(this).parent().removeClass('adding_point');
+					doDraggable();
+					calc_custom_position();	
+					$(this).parent().removeClass('adding_point');
 				}else {
 					 alert("Try again!");
 				}

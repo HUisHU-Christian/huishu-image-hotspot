@@ -133,7 +133,6 @@ Update responsive for pop
 
 * Edit css
 * Compress css and js in frontend
-* Add donate button in side
 
 ### 1.0.1
 

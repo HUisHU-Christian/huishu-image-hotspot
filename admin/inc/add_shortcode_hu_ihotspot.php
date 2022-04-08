@@ -74,7 +74,7 @@
 					$output.= '<div class="pins_animation ihotspot_'. $pins_more_option['pins_animation'] .'" style="top:-'. $pins_more_option['custom_top'] . 'px;left:-' . $pins_more_option['custom_left'] . 'px;height:' . intval($pins_more_option['custom_top']*2) . 'px;width:' . intval($pins_more_option['custom_left']*2) . 'px"></div>';
 				}	
 
-				if($pins_image) {
+				if ($pins_image) {
 					$output.= '<img src="'.$pins_image.'" class="pins_image ';
 					if(!$noTooltip){
 						$output.= 'ihotspot_hastooltop';
@@ -88,14 +88,14 @@
 					$output.= '"><div class="inner-pin"></div></div>';
 				}
 
-				if($pins_image_hover){
+				if ($pins_image_hover){
 					$output.= '<img src="' . $pins_image_hover . '" class="pins_image_hover ';
 					if(!$noTooltip){
 						$output.= 'ihotspot_hastooltop';
 					}
 					$output.= '"  style="top:-'. $pins_more_option['custom_hover_top'] . 'px;left:-' . $pins_more_option['custom_hover_left']. 'px">';
 				}
-		 		if($linkpins){
+		 		if ($linkpins){
 					$output.= '</a>';
 				}
 		 		$output.= '</div>';
