@@ -147,6 +147,16 @@ function hu_ihotspot_meta_box_callback( $post ) {
 				</td>				
 			</tr>
 			<tr>
+				<td class="svl-label"><?php _e('Custom Pin', 'hu-image-hotspot')?></td>
+				<td class="svl-input">
+					<div class="svl-upload-image">
+						<div class="view-has-value">
+							<input type="checkbox" name="pins_custom" class="pins_custom" value="false" />
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
 				<td class="svl-label"><?php _e('Pins Center Position', 'hu-image-hotspot')?></td>
 				<td class="svl-input">
 					<div class="pins-position-wrap">

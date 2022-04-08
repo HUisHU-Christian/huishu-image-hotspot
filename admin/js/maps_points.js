@@ -10,7 +10,7 @@ jQuery(document).ready(function($){
 		// Sets up the media library frame
 		meta_image_frame = wp.media.frames.meta_image_frame = wp.media({
 			title: meta_image.title,
-			button: { text:  meta_image.button },
+			button: { text:	meta_image.button },
 			library: { type: 'image' },
 			multiple: false
 		});
@@ -38,7 +38,7 @@ jQuery(document).ready(function($){
 		// Sets up the media library frame
 		meta_image_frame = wp.media.frames.meta_image_frame = wp.media({
 			title: meta_image.title,
-			button: { text:  meta_image.button },
+			button: { text:	meta_image.button },
 			library: { type: 'image' },
 			multiple: false
 		});
@@ -56,9 +56,9 @@ jQuery(document).ready(function($){
 		meta_image_frame.open();
 	});	
 	/*var coordinates = function(event, ui, element) {
-  		element = $(element);
-  		var left = ui.position.left,
-			top  = ui.position.top;
+			element = $(element);
+			var left = ui.position.left,
+			top	= ui.position.top;
 		var wWrap = element.width(),
 			hWrap = element.height();
 		$('#results').text('X: ' + left + ' ' + 'Y: ' + top)
@@ -66,43 +66,45 @@ jQuery(document).ready(function($){
 					 .append('<br>top: '+ (top/hWrap)*100 +'%;left: '+ (left/wWrap)*100+'%;');
 	}
 	*/
-  	function doDraggable(){
-  		$('.drag_element').draggable({
-	  	  	containment: '#body_drag',
-	  	  	drag: function( event, ui ) {
-	  	  		/*coordinates(event, ui, '#body_drag');*/
-	  	  	},
-	  	  	stop: function( event, ui ) {
-	  	  		var thisPoint = ui.helper[0].id;
-	  	  		var dataPoint = $('#'+thisPoint).attr('data-points');
-	  	  		var element = $('#body_drag');
-		  	  	var left = ui.position.left,
-					top  = ui.position.top;
+		function doDraggable(){
+			$('.drag_element').draggable({
+					containment: '#body_drag',
+					drag: function( event, ui ) {
+						/*coordinates(event, ui, '#body_drag');*/
+					},
+					stop: function( event, ui ) {
+						var thisPoint = ui.helper[0].id;
+						var dataPoint = $('#'+thisPoint).attr('data-points');
+						var element = $('#body_drag');
+						var left = ui.position.left,
+					top	= ui.position.top;
 				var wWrap = element.width(),
 					hWrap = element.height();
 				var topPosition = ((top/hWrap)*100).toFixed(2),
 					leftPosition = ((left/wWrap)*100).toFixed(2);				
 				
-	  	  		$('.all_points #info_draggable'+dataPoint+' input[name="pointdata[top][]"]').val(topPosition);
-	  	  		$('.all_points #info_draggable'+dataPoint+' input[name="pointdata[left][]"]').val(leftPosition);
-	  	  		  				
-  			}
-	  	});
-  	}  	
-  	doDraggable();
-  	$('.add_point').click(function(){  
-  		if(!$('input.pins_image').val()){
-  			alert('Add pins image then add point.');
-  			return false;
-  		}
-  		var pins_image_view = $('.pins_image').val();
-  		var countPoint = parseInt($('.wrap_svl .drag_element').last().attr('data-points'));
-  		var nonceForm = $('#maps_points_meta_box_nonce').val();
-  		if(!countPoint) countPoint = 0;
-  		countPoint = countPoint + 1;
-  		var fullId = 'point_content'+countPoint;
-  		$.ajax({
-  			type : "post",
+						$('.all_points #info_draggable'+dataPoint+' input[name="pointdata[top][]"]').val(topPosition);
+						$('.all_points #info_draggable'+dataPoint+' input[name="pointdata[left][]"]').val(leftPosition);
+											
+				}
+			});
+		}		
+		doDraggable();
+		$('.add_point').click(function(){	
+/*
+			if(!$('input.pins_image').val()){
+				alert('Add pins image then add point.');
+				return false;
+			}
+*/
+			var pins_image_view = $('.pins_image').val();
+			var countPoint = parseInt($('.wrap_svl .drag_element').last().attr('data-points'));
+			var nonceForm = $('#maps_points_meta_box_nonce').val();
+			if(!countPoint) countPoint = 0;
+			countPoint = countPoint + 1;
+			var fullId = 'point_content'+countPoint;
+			$.ajax({
+				type : "post",
 			dataType : "json",
 			url : meta_image.ajaxurl,
 			data : {
@@ -118,18 +120,18 @@ jQuery(document).ready(function($){
 			success: function(response) {
 				if(response.success === true) {
 					var data = response.data;
-					$('.wrap_svl').append(data.point_pins);  
-			  		$('.all_points').append(data.point_data);
-			  		
-			  		/* this is need for the tabs to work 
-			  		source https://github.com/ccbgs/load_editor
-			  		*/
+					$('.wrap_svl').append(data.point_pins);	
+						$('.all_points').append(data.point_data);
+						
+						/* this is need for the tabs to work 
+						source https://github.com/ccbgs/load_editor
+						*/
 					quicktags({id : fullId});
 					tinymce.init({
 						selector:"#" + fullId,
 						content_css : meta_image.editor_style,
 						min_height: 200,
-				        textarea_name: "pointdata[content][]",						
+						textarea_name: "pointdata[content][]",						
 						relative_urls:false,
 						remove_script_host:false,
 						convert_urls:false,
@@ -159,45 +161,45 @@ jQuery(document).ready(function($){
 					tinyMCE.execCommand('mceRemoveEditor', false, fullId);
 					tinyMCE.execCommand('mceAddEditor', false, fullId); 					
 					
-			  		doDraggable();
-			  		calc_custom_position();	
-			  		$(this).parent().removeClass('adding_point');
+						doDraggable();
+						calc_custom_position();	
+						$(this).parent().removeClass('adding_point');
 				}else {
-				   alert("Try again!");
+					 alert("Try again!");
 				}
 			}
-  		}); 
-  		return false;
-  	}); 
-  	$('body').on('click','.button_delete',function(){
-  		var idDiv = $(this).parents('.list_points').attr('data-points');
-        $('[data-popup="info_draggable' + idDiv + '"]').fadeOut(350, function(){
-            $('#info_draggable'+idDiv).remove();
-            $('#draggable'+idDiv).remove();
-        });
-  		return false;
-  	});
-  	$('body').on('click','.svl-delete-image',function(){
-  		var parentDiv = $(this).parents('.svl-upload-image');
-  		parentDiv.removeClass('has-image');
-  		parentDiv.find('input[type="hidden"]').val('');
-  		return false;
-  	});
-  	function cacl_position($position = 'center_center',$is_hover = false,$return = 'top'){
-  		var $r_top = 0;
+			}); 
+			return false;
+		}); 
+		$('body').on('click','.button_delete',function(){
+			var idDiv = $(this).parents('.list_points').attr('data-points');
+		$('[data-popup="info_draggable' + idDiv + '"]').fadeOut(350, function(){
+			$('#info_draggable'+idDiv).remove();
+			$('#draggable'+idDiv).remove();
+		});
+			return false;
+		});
+		$('body').on('click','.svl-delete-image',function(){
+			var parentDiv = $(this).parents('.svl-upload-image');
+			parentDiv.removeClass('has-image');
+			parentDiv.find('input[type="hidden"]').val('');
+			return false;
+		});
+		function cacl_position($position = 'center_center',$is_hover = false,$return = 'top'){
+			var $r_top = 0;
 		var $r_left = 0;		
 		if($is_hover){
 			var $width = $('.pins_img_hover').width(),
-	  			$height = $('.pins_img_hover').height(),
-	  			$custom_top = $('input[name="custom_hover_top"]').val(),
-	  			$custom_left = $('input[name="custom_hover_left"]').val();
+					$height = $('.pins_img_hover').height(),
+					$custom_top = $('input[name="custom_hover_top"]').val(),
+					$custom_left = $('input[name="custom_hover_left"]').val();
 		}else{
 			var $width = $('.pins_img').width(),
 				$height = $('.pins_img').height(),
 				$custom_top = $('input[name="custom_top"]').val(),
 				$custom_left = $('input[name="custom_left"]').val();
 		}
-  		switch ($position){
+			switch ($position){
 			case 'center_center':
 				$r_top = $height/2;
 				$r_left = $width/2;
@@ -243,13 +245,13 @@ jQuery(document).ready(function($){
 				$r_left = $width/2;
 				break;
 		}
-  		if($return == 'top'){
-  			return $r_top;
-  		}else{
-  			return $r_left;
-  		}
-  	}
-  	function point_position($position = 'center_center'){  		
+			if($return == 'top'){
+				return $r_top;
+			}else{
+				return $r_left;
+			}
+		}
+		function point_position($position = 'center_center'){			
 		$('input[name="custom_top"]').val(cacl_position($position,false,'top')),
 		$('input[name="custom_left"]').val(cacl_position($position,false,'left'));
 		$('input[name="custom_hover_top"]').val(cacl_position($position,true,'top')),
@@ -261,38 +263,38 @@ jQuery(document).ready(function($){
 			});
 		});
 	}
-  	calc_custom_position();
-  	function calc_custom_position(){
-  		var typeVal = $('input[name="choose_type"]:checked').val();
-  		point_position(typeVal);
-  	}
-  	$('input[name="choose_type"]').change(function(){
-  		var thisVal = $('input[name="choose_type"]:checked').val();
-  		point_position(thisVal);
-  		return false;
-  	});
-  	$('input[name="custom_top"],input[name="custom_left"]').on('change',function(){
-  		var thisVal = $('input[name="choose_type"]:checked').val();
-  		if(thisVal == 'custom_center')
-  			point_position(thisVal);
-  		return false;
-  	});
-    /*$('body').on('click','.pins_click_to_edit',function(){
-        var target = $(this).data('target')
-        //$(target).modal();
-        $(target).bPopup({
-            content:'iframe'
-        });
-        return false;
-    });*/
-    $('body').on('click', '[data-popup-open]', function(e)  {
-        var targeted_popup_class = jQuery(this).attr('data-popup-open');
-        $('[data-popup="' + targeted_popup_class + '"]').fadeIn(350);
-        e.preventDefault();
-    });
-    $('body').on('click', '[data-popup-close]', function(e)  {
-        var targeted_popup_class = jQuery(this).attr('data-popup-close');
-        $('[data-popup="' + targeted_popup_class + '"]').fadeOut(350);
-        e.preventDefault();
-    });
+		calc_custom_position();
+		function calc_custom_position(){
+			var typeVal = $('input[name="choose_type"]:checked').val();
+			point_position(typeVal);
+		}
+		$('input[name="choose_type"]').change(function(){
+			var thisVal = $('input[name="choose_type"]:checked').val();
+			point_position(thisVal);
+			return false;
+		});
+		$('input[name="custom_top"],input[name="custom_left"]').on('change',function(){
+			var thisVal = $('input[name="choose_type"]:checked').val();
+			if(thisVal == 'custom_center')
+				point_position(thisVal);
+			return false;
+		});
+	/*$('body').on('click','.pins_click_to_edit',function(){
+		var target = $(this).data('target')
+		//$(target).modal();
+		$(target).bPopup({
+			content:'iframe'
+		});
+		return false;
+	});*/
+	$('body').on('click', '[data-popup-open]', function(e)	{
+		var targeted_popup_class = jQuery(this).attr('data-popup-open');
+		$('[data-popup="' + targeted_popup_class + '"]').fadeIn(350);
+		e.preventDefault();
+	});
+	$('body').on('click', '[data-popup-close]', function(e)	{
+		var targeted_popup_class = jQuery(this).attr('data-popup-close');
+		$('[data-popup="' + targeted_popup_class + '"]').fadeOut(350);
+		e.preventDefault();
+	});
 });
